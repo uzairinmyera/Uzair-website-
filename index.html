@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>M.MUHAMMAD UZAIR | Personal Website</title>
+    <title>M. Muhammad Uzair | Student, Web Developer & Creator</title>
+
+    <meta name="description"
+        content="M. Muhammad Uzair — Student, Web Developer and Creator interested in technology, web development, digital marketing and creative projects.">
+
+    <meta name="author" content="M. Muhammad Uzair">
 
     <style>
         * {
@@ -12,6 +17,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -66,9 +75,25 @@
             line-height: 1.7;
         }
 
+        .skills {
+            margin-top: 25px;
+            line-height: 2;
+            color: #ccc;
+        }
+
         footer {
             padding: 30px;
             color: #777;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -76,7 +101,7 @@
 <body>
 
     <header>
-        <h1>M.MUHAMMAD UZAIR</h1>
+        <h1>M. MUHAMMAD UZAIR</h1>
 
         <p class="subtitle">
             Student • Web Developer • Creator
@@ -87,18 +112,42 @@
         </a>
     </header>
 
+
     <section id="about">
         <h2>About Me</h2>
 
         <p>
-            Hello! I'm M.Muhammad Uzair. I'm interested in technology,
-            web development, digital marketing and creating new projects.
+            Hello! I'm M. Muhammad Uzair, a student, web developer and creator
+            interested in technology, web development, digital marketing and
+            creating new digital projects.
         </p>
     </section>
 
-    <section>
+
+    <section id="skills">
+        <h2>Skills & Interests</h2>
+
+        <p class="skills">
+            Web Development • Digital Marketing • Technology •
+            Creative Projects • AI • Software
+        </p>
+    </section>
+
+
+    <section id="projects">
         <h2>My Projects</h2>
 
         <p>
             My projects will be added here soon.
-        </p
+        </p>
+    </section>
+
+
+    <footer>
+        <p>
+            © 2026 M. Muhammad Uzair. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>

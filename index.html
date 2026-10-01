@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>M. Muhammad Uzair | Student, Web Developer & Creator</title>
+    <title>M. Muhammad Uzair | Web Developer & Creator</title>
 
     <meta name="description"
-        content="M. Muhammad Uzair — Student, Web Developer and Creator interested in technology, web development, digital marketing and creative projects.">
+          content="M. Muhammad Uzair — Student, Web Developer and Creator. Explore my profile, skills, projects and digital work.">
 
     <meta name="author" content="M. Muhammad Uzair">
 
     <style>
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         html {
@@ -24,130 +27,950 @@
         }
 
         body {
-            background: #0f0f0f;
-            color: white;
-            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           BACKGROUND EFFECT
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 191, 255, 0.08);
+            border-radius: 50%;
+            filter: blur(100px);
+            top: -200px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: rgba(120, 0, 255, 0.06);
+            border-radius: 50%;
+            filter: blur(120px);
+            bottom: -200px;
+            right: -150px;
+            z-index: -1;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
         header {
-            padding: 80px 20px;
-            min-height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
 
-        h1 {
-            font-size: 50px;
-            margin-bottom: 15px;
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
-        .subtitle {
-            font-size: 20px;
+        .logo span {
+            color: #00bfff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #bbbbbb;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00bfff;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            max-width: 1150px;
+            margin: auto;
+
+            padding: 150px 25px 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .profile-wrapper {
+            display: inline-block;
+            padding: 5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00bfff, #7b2cff);
+            margin-bottom: 25px;
+        }
+
+        .profile-photo {
+            display: block;
+
+            width: 175px;
+            height: 175px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #050505;
+        }
+
+        .small-text {
+            color: #00bfff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #ffffff, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-size: clamp(18px, 3vw, 25px);
             color: #aaa;
-            margin-bottom: 30px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: auto;
+            color: #999;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
-            padding: 12px 25px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            border-radius: 25px;
+            padding: 13px 25px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary-button {
+            background: #00bfff;
+            color: #000000;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.25);
+        }
+
+        .secondary-button {
+            border: 1px solid #333;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .secondary-button:hover {
+            border-color: #00bfff;
+            color: #00bfff;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-label {
+            color: #00bfff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 5vw, 45px);
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            color: #999;
+            max-width: 700px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-box {
+            margin-top: 35px;
+
+            padding: 35px;
+
+            background: rgba(255, 255, 255, 0.025);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .about-box:hover {
+            border-color: rgba(0, 191, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .about-box p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .about-box p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-container {
+            margin-top: 35px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 25px;
+
+            background: rgba(255, 255, 255, 0.025);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #00bfff;
+        }
+
+        .skill-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .skill-card p {
+            color: #888;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-container {
+            margin-top: 35px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 30px;
+
+            min-height: 230px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,0.05),
+                rgba(255,255,255,0.015)
+            );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0, 191, 255, 0.5);
+        }
+
+        .project-number {
+            color: #00bfff;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .project-link {
+            margin-top: 20px;
+            color: #00bfff;
+            font-size: 14px;
             font-weight: bold;
         }
 
-        section {
-            padding: 70px 20px;
-            max-width: 800px;
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            text-align: center;
+
+            padding: 60px 25px;
+
+            background: linear-gradient(
+                135deg,
+                rgba(0, 191, 255, 0.08),
+                rgba(120, 0, 255, 0.05)
+            );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 25px;
+        }
+
+        .contact-box .section-description {
             margin: auto;
         }
 
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            color: #bbb;
-            line-height: 1.7;
-        }
-
-        .skills {
+        .contact-box .buttons {
             margin-top: 25px;
-            line-height: 2;
-            color: #ccc;
         }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            padding: 30px;
-            color: #777;
+            padding: 35px 20px;
+
+            text-align: center;
+
+            color: #666;
+
+            border-top: 1px solid rgba(255,255,255,0.07);
+
+            font-size: 13px;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 36px;
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 18px;
             }
 
-            .subtitle {
-                font-size: 18px;
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .skills-container,
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .about-box {
+                padding: 25px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <header>
-        <h1>M. MUHAMMAD UZAIR</h1>
 
-        <p class="subtitle">
-            Student • Web Developer • Creator
-        </p>
+        <nav>
 
-        <a href="#about" class="button">
-            About Me
-        </a>
+            <a href="#home" class="logo">
+                MUHAMMAD <span>UZAIR</span>
+            </a>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
     </header>
 
 
-    <section id="about">
-        <h2>About Me</h2>
 
-        <p>
-            Hello! I'm M. Muhammad Uzair, a student, web developer and creator
-            interested in technology, web development, digital marketing and
-            creating new digital projects.
-        </p>
-    </section>
+    <!-- =========================
+         HERO / HOME
+    ========================== -->
 
+    <main>
 
-    <section id="skills">
-        <h2>Skills & Interests</h2>
+        <section id="home" class="hero">
 
-        <p class="skills">
-            Web Development • Digital Marketing • Technology •
-            Creative Projects • AI • Software
-        </p>
-    </section>
+            <div class="hero-content">
 
 
-    <section id="projects">
-        <h2>My Projects</h2>
+                <!-- YOUR PHOTO -->
 
-        <p>
-            My projects will be added here soon.
-        </p>
-    </section>
+                <div class="profile-wrapper">
 
+                    <img
+                        src="images/IMG_20261001_190133.jpg"
+                        alt="M. Muhammad Uzair"
+                        class="profile-photo"
+                    >
+
+                </div>
+
+
+                <p class="small-text">
+                    HELLO, I'M
+                </p>
+
+
+                <h1>
+                    M. Muhammad <span>Uzair</span>
+                </h1>
+
+
+                <h2>
+                    Student • Web Developer • Creator
+                </h2>
+
+
+                <p class="hero-description">
+                    I build websites, explore technology and create
+                    digital projects that turn ideas into reality.
+                </p>
+
+
+                <div class="buttons">
+
+                    <a
+                        href="#projects"
+                        class="button primary-button"
+                    >
+                        View My Projects
+                    </a>
+
+                    <a
+                        href="#about"
+                        class="button secondary-button"
+                    >
+                        About Me
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about">
+
+            <p class="section-label">
+                ABOUT ME
+            </p>
+
+            <h2 class="section-title">
+                A little about me.
+            </h2>
+
+            <p class="section-description">
+                I'm interested in technology, web development,
+                AI and digital creativity.
+            </p>
+
+
+            <div class="about-box">
+
+                <p>
+                    I'm Muhammad Uzair, a student and aspiring
+                    web developer who enjoys learning how technology
+                    works and turning ideas into real digital projects.
+                </p>
+
+                <p>
+                    I enjoy building websites, experimenting with
+                    new technologies and developing projects that
+                    help me improve my skills.
+                </p>
+
+                <p>
+                    My goal is to keep learning, keep building
+                    and create meaningful digital experiences.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section id="skills">
+
+            <p class="section-label">
+                WHAT I DO
+            </p>
+
+            <h2 class="section-title">
+                Skills & Interests
+            </h2>
+
+            <p class="section-description">
+                Technologies and areas I'm currently exploring.
+            </p>
+
+
+            <div class="skills-container">
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Building responsive and modern websites
+                        using HTML, CSS and JavaScript.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        UI / UX
+                    </h3>
+
+                    <p>
+                        Creating clean, simple and user-friendly
+                        digital interfaces.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        AI & Automation
+                    </h3>
+
+                    <p>
+                        Exploring artificial intelligence,
+                        automation and emerging technologies.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Digital Projects
+                    </h3>
+
+                    <p>
+                        Turning ideas into practical websites
+                        and digital products.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Digital Creativity
+                    </h3>
+
+                    <p>
+                        Exploring creative ways to use technology
+                        and build useful experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Continuous Learning
+                    </h3>
+
+                    <p>
+                        Constantly learning new tools,
+                        technologies and development skills.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section id="projects">
+
+            <p class="section-label">
+                MY WORK
+            </p>
+
+            <h2 class="section-title">
+                Projects
+            </h2>
+
+            <p class="section-description">
+                Some of the digital projects and ideas I'm working on.
+            </p>
+
+
+            <div class="projects-container">
+
+
+                <!-- PROJECT 01 -->
+
+                <div class="project-card">
+
+                    <div>
+
+                        <div class="project-number">
+                            PROJECT 01
+                        </div>
+
+                        <h3>
+                            AL HAK ENTERPRISES
+                        </h3>
+
+                        <p>
+                            A website project for a perfume business,
+                            designed to present the brand, products
+                            and services online.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJECT 02 -->
+
+                <div class="project-card">
+
+                    <div>
+
+                        <div class="project-number">
+                            PROJECT 02
+                        </div>
+
+                        <h3>
+                            Croma Nexus
+                        </h3>
+
+                        <p>
+                            A technology brand concept focused on
+                            web development, AI, automation and
+                            digital solutions.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJECT 03 -->
+
+                <div class="project-card">
+
+                    <div>
+
+                        <div class="project-number">
+                            PROJECT 03
+                        </div>
+
+                        <h3>
+                            Personal Portfolio
+                        </h3>
+
+                        <p>
+                            My personal portfolio website showcasing
+                            my profile, skills, projects and journey.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        You are here →
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact">
+
+            <div class="contact-box">
+
+                <p class="section-label">
+                    GET IN TOUCH
+                </p>
+
+                <h2 class="section-title">
+                    Let's connect.
+                </h2>
+
+                <p class="section-description">
+                    Have a project idea, collaboration or just want
+                    to connect? Feel free to reach out.
+                </p>
+
+
+                <div class="buttons">
+
+                    <!-- CHANGE THIS EMAIL -->
+
+                    <a
+                        href="mailto: abuzair2009@gmail.com"
+                        class="button primary-button"
+                    >
+                        Email Me
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
+
         <p>
             © 2026 M. Muhammad Uzair. All rights reserved.
         </p>
+
     </footer>
+
 
 </body>
 </html>

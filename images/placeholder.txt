@@ -1,3 +1,9 @@
-<img src="images/IMG_20261001_190133.jpg"
-     alt="M. Muhammad Uzair"
-     class="profile-photo">
+<div class="profile-wrapper">
+
+    <img
+        src="images/1000276722.jpg"
+        alt="M. Muhammad Uzair"
+        class="profile-photo"
+    >
+
+</div>
